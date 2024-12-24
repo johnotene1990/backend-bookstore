@@ -8,8 +8,14 @@ const cors = require('cors')
 
 
 //middleware
-app.use(cors())
+// app.use(cors())
 app.use(express.json())
+
+app.use(cors({
+  origin: 'https://frontend-bookstore-7hn3.onrender.com/',
+  credentials: true,
+}));
+
 
 // db configuration
 main().catch(err => console.log(err));
